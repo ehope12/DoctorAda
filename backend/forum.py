@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify
 from models import db, Post, Comment, User
 
-
 forum_bp = Blueprint('forum_bp', __name__)
 
 @forum_bp.route('/posts', methods=['POST'])
@@ -9,28 +8,29 @@ def create_post():
     data = request.get_json()
     title = data.get('title')
     content = data.get('content')
-    user_id = data.get('user_id')
+    username = data.get('username')  # Change user_id to username
 
     if not title or not content:
         return jsonify({"error": "Title and content are required"}), 400
     
-    user = User.query.filter_by(username=user_id).first()
+    # Check if user exists; if not, create a new user
+    user = User.query.filter_by(username=username).first()
 
     if user is None:
-        new_user = User(username=user_id, password='default_password')
+        new_user = User(username=username, password='default_password')
         db.session.add(new_user)
         db.session.commit()
+        user = new_user  # Assign the new user to the user variable
 
-        user = new_user
-
-    new_post = Post(title=title, content=content, user_id=user_id)
+    new_post = Post(title=title, content=content, user_id=user.id)  # Use user.id
     db.session.add(new_post)
     db.session.commit()
 
     return jsonify({"message": "Post created successfully", "post": {
         "title": new_post.title,
         "content": new_post.content,
-        "user_id": new_post.user_id
+        "user_id": new_post.user_id,
+        "author": user.username  # Add author to the response
     }}), 201
 
 @forum_bp.route('/posts', methods=['GET'])
@@ -45,6 +45,15 @@ def get_posts():
     } for post in posts]
 
     return jsonify({"posts": post_list}), 200
+
+@forum_bp.route('/posts/<int:post_id>', methods=['DELETE'])
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    
+    db.session.delete(post)
+    db.session.commit()
+
+    return jsonify({"message": "Post deleted successfully"}), 200
 
 @forum_bp.route('/posts/<int:post_id>/comments', methods=['POST'])
 def add_comment(post_id):
