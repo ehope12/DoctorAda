@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
-
+// import Profile from './profile'
 const NavBar = () => {
   return (
     <header className="bg-white">
@@ -27,7 +28,10 @@ const NavBar = () => {
           </li>
 
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Discussions </a>
+            {/* <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Discussions </a> */}
+            <Link className="text-gray-500 transition hover:text-gray-500/75" to="/Forum">
+                Discussions
+            </Link>
           </li>
 
           <li>
@@ -35,7 +39,11 @@ const NavBar = () => {
           </li>
 
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Profile </a>
+            {/* <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Profile </a> */}
+            {/* <Link className="text-gray-500 transition hover:text-gray-500/75" to="/profile">Profile</Link> */}
+            <Link className="text-gray-500 transition hover:text-gray-500/75" to="/profile">
+                Profile
+            </Link>
           </li>
           
         </ul>

@@ -1,9 +1,14 @@
 // src/App.js
+// src/pages/Profile.js
+
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './profile.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const Profile = () => {
+    
     const [profile, setProfile] = useState(null);
 
     useEffect(() => {
@@ -20,6 +25,7 @@ const Profile = () => {
     }
 
     return (
+        <Router>
         <div className="container">
             <aside className="sidebar">
                 <h2>Menu</h2>
@@ -51,6 +57,7 @@ const Profile = () => {
                 </section>
             </main>
         </div>
+        </Router>
     );
 };
 
