@@ -1,0 +1,59 @@
+.page-container {
+    background: linear-gradient(to bottom, #95b0e6, #b6d9fe, #e8e7f1);
+    height: 100vh;
+    width: 100wh;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pfp {
+    transition: filter 0.3s ease;
+    border-radius: 50%;
+    height: 320px;
+    width: 320px;
+  }
+  
+  .pfp:hover {
+    filter: brightness(70%);
+  }
+  
+  .post-card-selection-container {
+    margin-left: 50px;
+    background-color: #fef8ff;
+    width: min-content;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .post-card-selection-btn {
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #fef8ff;
+    border: 0px;
+    cursor: pointer;
+    min-width: max-content;
+  }
+  
+  .post-card-selection-btn:hover {
+    opacity: 0.5;
+  }
+  
+  .post-card-container {
+    display: flex;
+    flex-direction: row;
+    padding: 15px
+  }
+  
+  .post-card {
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    border-radius: 25%;
+    margin: auto;
+    text-align: center;
+  }
