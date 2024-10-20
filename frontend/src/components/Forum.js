@@ -46,27 +46,27 @@ function Forum() {
 
       {/* New post form moved to the bottom */}
       <form className="forum-submit" onSubmit={submitPost}>
-        <input 
+        <input className="input-container"
           type="text" 
           value={title}
           onChange={e => setTitle(e.target.value)}
           placeholder="Post Title"
           required
         />
-        <textarea 
+        <textarea className="input-container"
           value={content}
           onChange={e => setContent(e.target.value)}
           placeholder="Post Content"
           required
         />
-        <input 
+        <input className="input-container"
           type="text" 
           value={username}
           onChange={e => setUsername(e.target.value)}
           placeholder="Username"
           required
         />
-        <button type="submit">Submit Post</button>
+        <button className="submit" type="submit">Submit Post</button>
       </form>
     </div>
   );

@@ -52,14 +52,14 @@ function PubMedSearch() {
 
       {/* Search form at the bottom */}
       <form className="search-submit" onSubmit={submitSearch}>
-        <input 
+        <input className="input-container"
           type="text" 
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Enter search query"
           required
         />
-        <input 
+        <input className="input-container"
           type="number" 
           value={numResults}
           onChange={e => setNumResults(e.target.value)}
@@ -67,7 +67,7 @@ function PubMedSearch() {
           placeholder="Number of results"
           required
         />
-        <button className="search-submit" type="submit">Search</button>
+        <button className="submit" type="submit">Search</button>
       </form>
 
       {/* Modal for displaying selected article details */}
