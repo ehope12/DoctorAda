@@ -1,18 +1,35 @@
-import logo from './logo.svg';
-import React from 'react';
+// App.js
+import React, { useState } from 'react';
 import './App.css';
-import HomePage from './components/HomePage';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
+import Forum from './components/Forum';
+import PubMedSearch from './components/SearchPopUp';
 
-// import DesktopHomepage from './home_page/Desktop1HomePage/Desktop1HomePage.jsx'
-// import DesktopProfile from './profile/Desktop2Profile/Desktop2Profile.jsx'; 
-import Profile from './components/profile';
 function App() {
+  const [citation, setCitation] = useState('');
+
+  const citeArticle = (article) => {
+    const citeText = `${article.title} - ${article.url}`;
+    setCitation(citeText);
+    alert(`Cited: ${citeText}`);
+  };
+
   return (
     <div className="App">
-      <NavBar />
-      <HomePage />
-      
+      {/* <NavBar /> */}
+      <div className="main-container">
+        <div className="forum-container">
+          <Forum />
+          <PubMedSearch onCiteArticle={citeArticle} />
+        </div>
+        <div className="search-container">
+          {/* Article Results */}
+          <div className="article-results">
+            {/* Article boxes can be dynamically generated here */}
+            <PubMedSearch onCiteArticle={citeArticle} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

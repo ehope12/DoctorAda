@@ -1,14 +1,184 @@
-.App {
-  display: flex; /* Enables flexbox layout */
-  height: 100vh; /* Full height of the viewport */
+
+
+.logo {
+  max-width: 50px; /* Set a max width for the logo */
+  height: auto; /* Maintain aspect ratio */
 }
 
-.NavBar {
-  width: 250px; /* Fixed width for the sidebar */
-  background-color: #3d68ff; /* Background color for the navbar */
+/* Global Styles */
+:root {
+  --primary-font: 'Calibri', sans-serif; /* Define the primary font */
+  --text-color: #333; /* Default text color */
+  --header-color: #2c3e50; /* Color for headings */
+  --author-color: #7f8c8d; /* Color for authors */
+  --modal-background-color: white; /* Modal background color */
+  --modal-overlay-background: rgba(0, 0, 0, 0.7); /* Modal overlay background */
+  --font-size-default: 16px; /* Default font size */
+  --font-size-large: 20px; /* Larger font size for headings */
 }
 
-.HomePage {
-  flex-grow: 1; /* Fills the remaining space */
-  padding: 20px; /* Add some padding */
+/* Apply global font and text color */
+body {
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  font-size: var(--font-size-default);
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styles for titles */
+h2 {
+  font-family: 'Arial Rounded', sans-serif; /* Change to a puffier font */
+  font-size: 36px; /* Increase the font size for a puffier effect */
+  font-weight: bold; /* Make the font bold */
+  color: #3a95d6; /* Change the text color to a vibrant blue */
+  text-align: center; /* Center the title */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+  margin-bottom: 10px; /* Space below the title */
+  padding: 10px; /* Add padding for better spacing */
+  background: linear-gradient(45deg, #3a95d6, #9fbede, #b84eb4); /* Gradient background */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the text color transparent */
+}
+
+/* Container for forum and search components */
+.main-container {
+  display: flex; /* Flexbox layout for horizontal splitting */
+  height: 100vh; /* Full viewport height */
+  background-color: #f9f9f9; /* Optional background color */
+}
+
+/* Forum Section */
+.forum-container {
+  flex: 1; /* Take equal space in the split */
+  background-color: #f9f9f9; /* Optional background color */
+  padding: 20px; /* Add padding */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-top: 50px;
+}
+
+/* Search Section */
+.search-container {
+  flex: 1; /* Take equal space in the split */
+  padding: 20px; /* Add padding */
+  overflow-y: auto; /* Enable vertical scrolling */
+  display: flex; /* Flex for vertical layout */
+  flex-direction: column; /* Column layout for title, input, and results */
+  background-color: #f9f9f9; /* Optional background color */
+}
+
+/* Article Results */
+.article-results {
+  margin-top: 50px; /* Space above results */
+  margin-left: 100px;
+  flex-grow: 1; /* Allow to grow and take available space */
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+}
+
+/* Article Box Styles */
+.article-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%; /* Full width within its container */
+  cursor: pointer; /* Show cursor pointer on hover */
+  border-radius: 8px;
+}
+
+/* Title Styles */
+.search-title {
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.search-submit {
+  position: fixed;
+  bottom: 0; /* Adjust as needed */
+  right: 120px; /* Adjust as needed */
+}
+
+
+.forum-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 380px;
+}
+
+/* .search-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 220px;
+} */
+
+/* Article box styles */
+/* .article-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  width: 400px;
+  cursor: pointer;
+  border-radius: 8px;
+  position: fixed;
+  top:100px;
+} */
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--modal-overlay-background); /* Use the variable for background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Make sure it's above other content */
+}
+
+.modal-content {
+  background: var(--modal-background-color); /* Use the variable for modal background */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 1000px; /* Limit the width of the modal */
+  width: 90%; /* Full width on smaller screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: var(--font-size-default); /* Default font size */
+}
+
+/* Close button styles */
+.close-button {
+  position: absolute; /* Position absolute to the modal content */
+  top: 10px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  background: none; /* No background */
+  border: none; /* No border */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: white; /* Change color as needed */
+}
+
+/* Submit button styles */
+.submit {
+  background-color: #3a95d6; /* Button background color */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Adjust heading styles in article box */
+.article-box h3 {
+  color: var(--header-color); /* Use the variable for header color */
+  font-size: var(--font-size-large); /* Use larger font size */
+}
+
+.article-box small {
+  color: var(--author-color); /* Use the variable for authors color */
 }
