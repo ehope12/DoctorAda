@@ -1,0 +1,5 @@
+header {
+    position: relative; /* or absolute */
+    z-index: 1000; /* High enough to stay on top of other elements */
+  }
+  
