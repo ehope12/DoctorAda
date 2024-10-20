@@ -17,6 +17,12 @@ The target audience for this website is healthcare professionals who are looking
 
 ## Tech Stack
 
-* React and Tailwind
-* Flask
+### Design
 * Figma
+* Canva
+### Frontend
+* React
+* Tailwind
+### Backend
+* Flask
+* SQLAlchemy
