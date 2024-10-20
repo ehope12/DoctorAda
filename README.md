@@ -12,11 +12,25 @@ The target audience for this website is healthcare professionals who are looking
 ## Features
 
 * Doctor credential verification
-* Chat/forum/messaging abilities
-* Reseaerch/discussion search
+* Forum and direct messaging abilities
+* Verified research article search
+* Descriptive profile information
+* Easy-to-use interface
 
 ## Tech Stack
 
-* React and Tailwind
-* Flask
+### Design
 * Figma
+* Canva
+### Frontend
+* React
+* Tailwind
+### Backend
+* Flask
+* SQLAlchemy
+
+## Authors
+* Seher Bhaskar
+* Emily Hsieh
+* Trisha Manna
+* Thea Surya

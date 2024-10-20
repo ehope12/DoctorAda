@@ -1,0 +1,125 @@
+/* Add these styles to your existing CSS file for PubMedSearch */
+
+/* Global Styles */
+:root {
+    --primary-font: 'Calibri', sans-serif; /* Define the primary font */
+    --text-color: #333; /* Default text color */
+    --header-color: #2c3e50; /* Color for headings */
+    --author-color: #7f8c8d; /* Color for authors */
+    --modal-background-color: white; /* Modal background color */
+    --modal-overlay-background: rgba(0, 0, 0, 0.7); /* Modal overlay background */
+    --font-size-default: 16px; /* Default font size */
+    --font-size-large: 20px; /* Larger font size for headings */
+}
+
+/* Apply global font and text color */
+body {
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    font-size: var(--font-size-default);
+}
+
+/* Styles specifically for the title */
+h2 {
+    font-family: 'Arial Rounded', sans-serif; /* Change to a puffier font */
+    font-size: 36px; /* Increase the font size for a puffier effect */
+    font-weight: bold; /* Make the font bold */
+    color: #3a95d6; /* Change the text color to a vibrant blue */
+    text-align: center; /* Center the title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    margin-bottom: 20px; /* Space below the title */
+    padding: 10px; /* Add padding for better spacing */
+    background: linear-gradient(45deg, #3a95d6, #3a95d6); /* Gradient background */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent */
+}
+
+.search-title {
+    position: fixed;
+    top: 10px;
+    right: 100px;
+}
+
+.forum-title {
+    position: fixed;
+    top: 10px;
+    left: 400px;
+}
+
+.search-container {
+    padding: 20px;
+}
+
+.article-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    width: 400px;
+    cursor: pointer; /* Show cursor pointer on hover */
+    border-radius: 8px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--modal-overlay-background); /* Use the variable for background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Make sure it's above other content */
+}
+
+.modal-content {
+    background: var(--modal-background-color); /* Use the variable for modal background */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1000px; /* Limit the width of the modal */
+    width: 90%; /* Full width on smaller screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: var(--font-size-default); /* Default font size */
+}
+
+.close-button {
+    position: absolute; /* Position absolute to the modal content */
+    top: 10px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: white; /* Change color as needed */
+}
+
+.submit {
+    background-color: #3a95d6; /* Button background color */
+    color: white; /* White text color */
+    padding: 5px 10px; /* Padding */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    margin-left:0px;
+}
+
+/* Adjust the heading styles */
+.article-box h3 {
+    color: var(--header-color); /* Use the variable for header color */
+    font-size: var(--font-size-large); /* Use larger font size */
+}
+
+.article-box small {
+    color: var(--author-color); /* Use the variable for authors color */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color:#ccdff1;
+    border-color: #333;
+    /* border-width: 1px; */
+    border-radius:8px;
+    padding-left:5px;
+}
