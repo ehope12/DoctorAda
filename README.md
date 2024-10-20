@@ -28,3 +28,9 @@ The target audience for this website is healthcare professionals who are looking
 ### Backend
 * Flask
 * SQLAlchemy
+
+## Authors
+* Seher Bhaskar
+* Emily Hsieh
+* Trisha Manna
+* Thea Surya
