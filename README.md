@@ -12,8 +12,10 @@ The target audience for this website is healthcare professionals who are looking
 ## Features
 
 * Doctor credential verification
-* Chat/forum/messaging abilities
-* Reseaerch/discussion search
+* Forum and direct messaging abilities
+* Verified research article search
+* Descriptive profile information
+* Easy-to-use interface
 
 ## Tech Stack
 
